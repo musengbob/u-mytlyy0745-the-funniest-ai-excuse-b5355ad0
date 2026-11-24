@@ -17,7 +17,9 @@ const EXCUSE =
   "I outsourced your task to a subagent, who outsourced it to another subagent, who is now asking me when it is due.";
 
 // The gate allows 1 to 200 characters; count code points, not UTF-16
-// units, so any astral-plane character would count once.
+// units, so any astral-plane character would count once. The line as
+// written is 113 code points, comfortably inside the gate, and the
+// program re-checks the written file rather than trusting the constant.
 const MAX_CHARS = 200;
 
 function fail(message: string): never {
